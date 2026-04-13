@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Noto+Serif+Sinhala:wght@400;600&family=Noto+Serif+Tamil:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --saffron: #FFAA00;
+  --saffron-deep: #E8950A;
+  --saffron-dark: #9A5C00;
+  --jasmine: #FF6633;
+  --jasmine-deep: #C23408;
+  --peacock: #1AA69B;
+  --peacock-deep: #076C66;
+  --avocado: #74A82E;
+  --avocado-deep: #3E6E0F;
+  --cream: #FFF8E7;
+  --cream-mid: #FFEDB8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #0A0500;
+  color: #FFF8E7;
+  overflow-x: hidden;
+}
+
+/* Avurudu background pattern */
+.avurudu-bg {
+  background-color: #0A0500;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255, 170, 0, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 90% 80%, rgba(255, 102, 51, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 30% at 10% 70%, rgba(26, 166, 155, 0.08) 0%, transparent 60%);
+}
+
+/* Lotus pattern overlay */
+.lotus-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFAA00' fill-opacity='0.04'%3E%3Cpath d='M30 5 C20 15 15 25 30 35 C45 25 40 15 30 5Z M30 55 C20 45 15 35 30 25 C45 35 40 45 30 55Z M5 30 C15 20 25 15 35 30 C25 45 15 40 5 30Z M55 30 C45 20 35 15 25 30 C35 45 45 40 55 30Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.font-display {
+  font-family: 'Yeseva One', serif;
+}
+
+.font-sinhala {
+  font-family: 'Noto Serif Sinhala', serif;
+}
+
+.font-tamil {
+  font-family: 'Noto Serif Tamil', serif;
+}
+
+/* Nakath card glow */
+.nakath-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nakath-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Countdown pulse */
+.countdown-digit {
+  animation: subtlePulse 1s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* Lamp flicker */
+.lamp-flame {
+  animation: flicker 2s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes flicker {
+  0%, 100% { transform: scaleY(1) skewX(0deg); opacity: 1; }
+  25% { transform: scaleY(1.08) skewX(-2deg); opacity: 0.92; }
+  75% { transform: scaleY(0.95) skewX(2deg); opacity: 1; }
+}
+
+/* Staggered fade-up */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpAnim 0.6s ease forwards;
+}
+
+@keyframes fadeUpAnim {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
+
+/* Gold gradient text */
+.gold-text {
+  background: linear-gradient(135deg, #FFD97A 0%, #FFAA00 40%, #E8950A 70%, #FFD97A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Divider */
+.avurudu-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,170,0,0.4), rgba(255,102,51,0.4), transparent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0A0500; }
+::-webkit-scrollbar-thumb { background: #C47800; border-radius: 3px; }
+
+/* Language button active */
+.lang-btn.active {
+  background: rgba(255, 170, 0, 0.2);
+  border-color: rgba(255, 170, 0, 0.6);
+  color: #FFD97A;
+}
