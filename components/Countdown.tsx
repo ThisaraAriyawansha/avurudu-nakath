@@ -34,13 +34,16 @@ function pad(n: number) {
 }
 
 export default function Countdown({ lang }: { lang: Lang }) {
-  const [time, setTime] = useState<TimeLeft>(calcTimeLeft());
+  const [time, setTime] = useState<TimeLeft | null>(null);
   const content = siteContent[lang];
 
   useEffect(() => {
+    setTime(calcTimeLeft());
     const id = setInterval(() => setTime(calcTimeLeft()), 1000);
     return () => clearInterval(id);
   }, []);
+
+  if (!time) return null;
 
   if (time.passed) {
     return (
