@@ -29,8 +29,9 @@ export default function NakathCard({ nakath, lang, index, isHighlighted }: Props
 
   return (
     <div
-      className={`nakath-card fade-up ${delayClass} rounded-2xl cursor-pointer`}
+      className={`nakath-card fade-up ${delayClass} rounded-2xl cursor-pointer select-none`}
       style={{
+        WebkitTapHighlightColor: "transparent",
         background: isHighlighted
           ? "linear-gradient(135deg, rgba(255,170,0,0.12), rgba(255,102,51,0.08))"
           : "rgba(255,255,255,0.04)",
@@ -43,9 +44,9 @@ export default function NakathCard({ nakath, lang, index, isHighlighted }: Props
       }}
       onClick={() => setExpanded(!expanded)}
     >
-      <div className="p-5">
+      <div className="p-4 sm:p-5">
         {/* Top row */}
-        <div className="flex items-start gap-4">
+        <div className="flex items-start gap-3 sm:gap-4">
           {/* Icon bubble */}
           <div
             className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-xl"

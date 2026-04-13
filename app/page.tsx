@@ -17,11 +17,11 @@ export default function Home() {
       <FloatingPetals />
 
       {/* Content wrapper */}
-      <div className="relative z-10 max-w-2xl mx-auto px-4 pb-20">
+      <div className="relative z-10 max-w-2xl mx-auto px-3 sm:px-4 pb-16 sm:pb-20">
 
         {/* ── HEADER ── */}
-        <header className="pt-8 pb-6">
-          <div className="flex items-center justify-between mb-8">
+        <header className="pt-4 sm:pt-8 pb-4 sm:pb-6">
+          <div className="flex items-center justify-between mb-4 sm:mb-8">
             {/* Logo / Site name */}
             <div className="flex items-center gap-3">
               <OilLamp size={36} />
@@ -40,7 +40,7 @@ export default function Home() {
           {/* Hero */}
           <div className="text-center fade-up">
             {/* Lamp centered */}
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-4 sm:mb-6">
               <div className="relative">
                 <div
                   className="absolute inset-0 rounded-full blur-2xl"
@@ -50,7 +50,27 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Add greetion  */}
+            {/* Happy New Year — all three languages */}
+            <div className="mb-5 mt-1">
+              <p
+                className="font-sinhala font-semibold mb-1.5"
+                style={{ fontSize: "clamp(1rem, 4.5vw, 1.35rem)", color: "#FFD97A" }}
+              >
+                සුභ අළුත් අවුරුද්දක් වේවා!
+              </p>
+              <p
+                className="font-tamil mb-1.5"
+                style={{ fontSize: "clamp(0.9rem, 4vw, 1.2rem)", color: "rgba(255,140,80,0.92)" }}
+              >
+                இனிய புத்தாண்டு நல்வாழ்த்துக்கள்!
+              </p>
+              <p
+                className="text-sm tracking-wide"
+                style={{ color: "rgba(255,248,231,0.45)" }}
+              >
+                Subha Aluth Avuruddak Wewa!
+              </p>
+            </div>
 
             <h2
               className="font-display mt-4 mb-2 leading-tight"
@@ -77,7 +97,7 @@ export default function Home() {
               className="text-sm mb-1"
               style={{ color: "rgba(255,248,231,0.5)" }}
             >
-              {lang === "si" ? "ඒප්‍රේල් 13–14, 2026" : lang === "ta" ? "ஏப்ரல் 13–14, 2026" : "April 13–14, 2026"}
+              {lang === "si" ? "අප්‍රේල් 13–14, 2026" : lang === "ta" ? "ஏப்ரல் 13–14, 2026" : "April 13–14, 2026"}
             </p>
 
             {/* Sinhala & Tamil script names */}
@@ -97,9 +117,9 @@ export default function Home() {
         <div className="avurudu-divider my-6 fade-up delay-2" />
 
         {/* ── COUNTDOWN ── */}
-        <section className="mb-8 fade-up delay-3">
+        <section className="mb-6 sm:mb-8 fade-up delay-3">
           <div
-            className="rounded-2xl p-6"
+            className="rounded-2xl p-4 sm:p-6"
             style={{
               background: "linear-gradient(135deg, rgba(255,170,0,0.1), rgba(255,102,51,0.06))",
               border: "1px solid rgba(255,170,0,0.2)",
