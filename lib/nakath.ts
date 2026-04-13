@@ -3,9 +3,11 @@ export type Lang = "en" | "si" | "ta";
 export interface NakathTime {
   id: string;
   icon: string;
-  time: string;        // ISO string in Sri Lanka time
+  time: string;        // ISO string in Sri Lanka time (Asia/Colombo, UTC+05:30)
   displayTime: string;
   displayDate: string;
+  displayDateSi: string;
+  displayDateTa: string;
   color: string;
   direction: string;
   directionSi: string;
@@ -22,9 +24,11 @@ export const nakathTimes: NakathTime[] = [
   {
     id: "nonagatha",
     icon: "🌙",
-    time: "2026-04-13T14:14:00+05:30",
-    displayTime: "2:14 PM",
+    time: "2026-04-13T15:09:00+05:30",
+    displayTime: "3:09 PM",
     displayDate: "April 13",
+    displayDateSi: "අප්‍රේල් 13",
+    displayDateTa: "ஏப்ரல் 13",
     color: "#9A5C00",
     direction: "West",
     directionSi: "බස්නාහිර",
@@ -47,9 +51,11 @@ export const nakathTimes: NakathTime[] = [
   {
     id: "punya",
     icon: "✨",
-    time: "2026-04-13T20:19:00+05:30",
-    displayTime: "8:19 PM",
-    displayDate: "April 13",
+    time: "2026-04-14T09:32:00+05:30",
+    displayTime: "9:32 AM",
+    displayDate: "April 14",
+    displayDateSi: "අප්‍රේල් 14",
+    displayDateTa: "ஏப்ரல் 14",
     color: "#0D8880",
     direction: "East",
     directionSi: "නැගෙනහිර",
@@ -72,9 +78,11 @@ export const nakathTimes: NakathTime[] = [
   {
     id: "hearth",
     icon: "🔥",
-    time: "2026-04-14T06:14:00+05:30",
-    displayTime: "6:14 AM",
+    time: "2026-04-14T10:51:00+05:30",
+    displayTime: "10:51 AM",
     displayDate: "April 14",
+    displayDateSi: "අප්‍රේල් 14",
+    displayDateTa: "ஏப்ரல் 14",
     color: "#C23408",
     direction: "East",
     directionSi: "නැගෙනහිර",
@@ -85,7 +93,7 @@ export const nakathTimes: NakathTime[] = [
     name: { en: "Lipa Ganima", si: "ලිප ගැනීම", ta: "அடுப்பு மூட்டல்" },
     subtitle: {
       en: "Light the Hearth",
-      si: "ලිප දල්වන්න",
+      si: "ලිප දල්වීම",
       ta: "சமையல் அடுப்பை மூட்டுதல்",
     },
     desc: {
@@ -97,9 +105,11 @@ export const nakathTimes: NakathTime[] = [
   {
     id: "meal",
     icon: "🍚",
-    time: "2026-04-14T07:19:00+05:30",
-    displayTime: "7:19 AM",
+    time: "2026-04-14T12:06:00+05:30",
+    displayTime: "12:06 PM",
     displayDate: "April 14",
+    displayDateSi: "අප්‍රේල් 14",
+    displayDateTa: "ஏப்ரல் 14",
     color: "#3E6E0F",
     direction: "North",
     directionSi: "උතුර",
@@ -122,9 +132,11 @@ export const nakathTimes: NakathTime[] = [
   {
     id: "work",
     icon: "💼",
-    time: "2026-04-14T08:14:00+05:30",
-    displayTime: "8:14 AM",
+    time: "2026-04-14T12:06:00+05:30",
+    displayTime: "12:06 PM",
     displayDate: "April 14",
+    displayDateSi: "අප්‍රේල් 14",
+    displayDateTa: "ஏப்ரல் 14",
     color: "#074C8C",
     direction: "East",
     directionSi: "නැගෙනහිර",
@@ -135,7 +147,7 @@ export const nakathTimes: NakathTime[] = [
     name: { en: "Ganu Denu", si: "ගනු දෙනු ආරම්භය", ta: "வியாபாரம் தொடக்கம்" },
     subtitle: {
       en: "First Transactions & Work",
-      si: "පළමු ගනු දෙනු",
+      si: "පළමු වැඩ ආරම්භය හා ගනු දෙනු",
       ta: "முதல் வர்த்தகம்",
     },
     desc: {
@@ -147,9 +159,11 @@ export const nakathTimes: NakathTime[] = [
   {
     id: "oilbath",
     icon: "🌿",
-    time: "2026-04-14T09:24:00+05:30",
-    displayTime: "9:24 AM",
-    displayDate: "April 14",
+    time: "2026-04-15T06:54:00+05:30",
+    displayTime: "6:54 AM",
+    displayDate: "April 15",
+    displayDateSi: "අප්‍රේල් 15",
+    displayDateTa: "ஏப்ரல் 15",
     color: "#558B1A",
     direction: "South",
     directionSi: "දකුණ",
@@ -160,7 +174,7 @@ export const nakathTimes: NakathTime[] = [
     name: { en: "Hisa Thel Gema", si: "හිස තෙල් ගෑම", ta: "எண்ணெய் தேய்த்தல்" },
     subtitle: {
       en: "Auspicious Oil Bath",
-      si: "ශුභ තෙල් නෑම",
+      si: "ශුභ හිස් තෙල් ගෑම",
       ta: "மங்கல எண்ணெய் குளியல்",
     },
     desc: {
@@ -191,7 +205,7 @@ export const siteContent = {
     tagline: "සිංහල හා දෙමළ අළුත් අවුරුදු 2026",
     subtitle: "ශුභ නකත් වේලාවන්",
     countdownLabel: "පුණ්‍ය කාලය දක්වා",
-    days: "දිනය",
+    days: "දින",
     hours: "පැය",
     minutes: "මිනිත්තු",
     seconds: "තත්පර",

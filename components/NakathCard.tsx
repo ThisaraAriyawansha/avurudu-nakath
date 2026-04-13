@@ -23,6 +23,7 @@ export default function NakathCard({ nakath, lang, index, isHighlighted }: Props
   const desc = nakath.desc[lang];
   const direction = lang === "si" ? nakath.directionSi : lang === "ta" ? nakath.directionTa : nakath.direction;
   const colour = lang === "si" ? nakath.colourSi : lang === "ta" ? nakath.colourTa : nakath.colour;
+  const displayDate = lang === "si" ? nakath.displayDateSi : lang === "ta" ? nakath.displayDateTa : nakath.displayDate;
 
   const delayClass = `delay-${Math.min(index + 1, 8)}`;
 
@@ -78,7 +79,7 @@ export default function NakathCard({ nakath, lang, index, isHighlighted }: Props
                   border: `1px solid ${nakath.color}44`,
                 }}
               >
-                {nakath.displayDate}
+                {displayDate}
               </span>
             </div>
           </div>

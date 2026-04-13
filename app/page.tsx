@@ -77,7 +77,7 @@ export default function Home() {
               <br />
               <span style={{ color: "#FFF8E7" }}>
                 {lang === "si"
-                  ? "අළුත් අවුරුදු ෨ ෦ ෨ ෬"
+                  ? "අළුත් අවුරුදු 2026"
                   : lang === "ta"
                   ? "புத்தாண்டு 2026"
                   : "New Year 2026"}

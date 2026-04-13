@@ -11,7 +11,8 @@ interface TimeLeft {
   passed: boolean;
 }
 
-const PUNYA_KALAYA = new Date("2026-04-13T20:19:00+05:30");
+// Punya Kalaya — April 14, 2026 at 9:32 AM Asia/Colombo (UTC+05:30)
+const PUNYA_KALAYA = new Date("2026-04-14T09:32:00+05:30");
 
 function calcTimeLeft(): TimeLeft {
   const diff = PUNYA_KALAYA.getTime() - Date.now();
