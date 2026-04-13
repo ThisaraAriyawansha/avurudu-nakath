@@ -50,18 +50,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mb-2">
-              <span
-                className="inline-block text-xs font-medium tracking-[0.2em] uppercase px-4 py-1.5 rounded-full"
-                style={{
-                  background: "rgba(255,170,0,0.1)",
-                  border: "1px solid rgba(255,170,0,0.25)",
-                  color: "rgba(255,216,120,0.8)",
-                }}
-              >
-                Saka 1948
-              </span>
-            </div>
+            {/* Add greetion  */}
 
             <h2
               className="font-display mt-4 mb-2 leading-tight"
