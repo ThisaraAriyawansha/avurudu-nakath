@@ -127,7 +127,7 @@ export const nakathTimes: NakathTime[] = [
     colour: "Red",
     colourSi: "රතු",
     colourTa: "சிவப்பு",
-    name: { en: "First Work/Meal", si: "පළමු රැකියාව/ආහාර වේල", ta: "முதல் வேலை/உணவு" },
+    name: { en: "First Work/Meal", si: "වැඩ ඇල්ලීම, ආහාර අනුභවය හා ගනු දෙනු කිරීම", ta: "முதல் வேலை/உணவு" },
     subtitle: {
       en: "First Meal, Work & Transactions",
       si: "ආහාර ගැනීම හා ගනු දෙනු",
