@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { nakathTimes, siteContent, Lang } from "@/lib/nakath";
-import Countdown from "@/components/Countdown";
 import NakathCard from "@/components/NakathCard";
 import OilLamp from "@/components/OilLamp";
 import LangSwitcher from "@/components/LangSwitcher";
 import FloatingPetals from "@/components/FloatingPetals";
+
+const Countdown = dynamic(() => import("@/components/Countdown"), { ssr: false });
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>("en");
