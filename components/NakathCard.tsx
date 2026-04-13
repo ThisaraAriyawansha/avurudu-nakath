@@ -24,6 +24,7 @@ export default function NakathCard({ nakath, lang, index, isHighlighted }: Props
   const direction = lang === "si" ? nakath.directionSi : lang === "ta" ? nakath.directionTa : nakath.direction;
   const colour = lang === "si" ? nakath.colourSi : lang === "ta" ? nakath.colourTa : nakath.colour;
   const displayDate = lang === "si" ? nakath.displayDateSi : lang === "ta" ? nakath.displayDateTa : nakath.displayDate;
+  const displayTime = lang === "si" ? nakath.displayTimeSi : lang === "ta" ? nakath.displayTimeTa : nakath.displayTime;
 
   const delayClass = `delay-${Math.min(index + 1, 8)}`;
 
@@ -92,7 +93,7 @@ export default function NakathCard({ nakath, lang, index, isHighlighted }: Props
             className="font-display text-2xl"
             style={{ color: "#FFD97A" }}
           >
-            {nakath.displayTime}
+            {displayTime}
           </div>
           <div className="flex gap-2 flex-wrap">
             <span

@@ -8,6 +8,8 @@ export interface NakathTime {
   displayDate: string;
   displayDateSi: string;
   displayDateTa: string;
+  displayTimeSi: string;
+  displayTimeTa: string;
   color: string;
   direction: string;
   directionSi: string;
@@ -26,6 +28,8 @@ export const nakathTimes: NakathTime[] = [
     icon: "🌙",
     time: "2026-04-14T03:08:00+05:30",
     displayTime: "3:08 AM – 3:56 PM",
+    displayTimeSi: "පෙ.ව. 03:08 – ප.ව. 03:56",
+    displayTimeTa: "காலை 03:08 – மாலை 03:56",
     displayDate: "April 14",
     displayDateSi: "අප්‍රේල් 14",
     displayDateTa: "ஏப்ரல் 14",
@@ -43,9 +47,9 @@ export const nakathTimes: NakathTime[] = [
       ta: "புனித நோனாகத காலம்",
     },
     desc: {
-      en: "The sacred Punya Kalaya period begins (3:08 AM – 3:56 PM). No work or eating — perform religious activities and reflect in prayer. Prepare the home and await the New Year.",
-      si: "ශුභ නොනාගත / පුණ්‍ය කාලය ආරම්භ වේ (පෙ.ව. 3:08 සිට ප.ව. 3:56 දක්වා). වැඩ නොකළ යුතු, ආහාර නොගත යුතු කාලයකි. ධාර්මික කටයුතුවල නියැළී, ගෙය සකසා නව වර්ෂය ලැබීමට සූදානම් වන්න.",
-      ta: "புனித நோனாகத / புண்ணிய காலம் தொடங்குகிறது (அதிகாலை 3:08 – மாலை 3:56). வேலை செய்யாத, சாப்பிடாத நேரம். மதச் சடங்குகளில் ஈடுபட்டு வீட்டை தயார் செய்யுங்கள்.",
+      en: "The sacred Punya Kalaya period (3:08 AM – 3:56 PM). No work or eating — perform religious activities and reflect in prayer. Prepare the home and await the New Year.",
+      si: "ශුභ නොනාගත / පුණ්‍ය කාලය (පෙ.ව. 03:08 සිට ප.ව. 03:56 දක්වා). වැඩ නොකළ යුතු, ආහාර නොගත යුතු කාලයකි. ධාර්මික කටයුතුවල නියැළී, ගෙය සකසා නව වර්ෂය ලැබීමට සූදානම් වන්න.",
+      ta: "புனித நோனாகத / புண்ணிய காலம் (காலை 03:08 – மாலை 03:56). வேலை செய்யாத, சாப்பிடாத நேரம். மதச் சடங்குகளில் ஈடுபட்டு வீட்டை தயார் செய்யுங்கள்.",
     },
   },
   {
@@ -53,6 +57,8 @@ export const nakathTimes: NakathTime[] = [
     icon: "✨",
     time: "2026-04-14T09:32:00+05:30",
     displayTime: "9:32 AM",
+    displayTimeSi: "පෙ.ව. 09:32",
+    displayTimeTa: "காலை 09:32",
     displayDate: "April 14",
     displayDateSi: "අප්‍රේල් 14",
     displayDateTa: "ஏப்ரல் 14",
@@ -63,9 +69,9 @@ export const nakathTimes: NakathTime[] = [
     colour: "Red",
     colourSi: "රතු",
     colourTa: "சிவப்பு",
-    name: { en: "Aluth Avurudu Udawa", si: "අළුත් අවුරුදු උදාව", ta: "புத்தாண்டு உதயம்" },
+    name: { en: "Dawn of New Year", si: "අළුත් අවුරුදු උදාව", ta: "புத்தாண்டு உதயம்" },
     subtitle: {
-      en: "Dawn of the New Year",
+      en: "Aluth Avurudu Udawa",
       si: "නව වර්ෂය උදා වේ",
       ta: "புத்தாண்டு விடியல்",
     },
@@ -80,6 +86,8 @@ export const nakathTimes: NakathTime[] = [
     icon: "🔥",
     time: "2026-04-14T10:51:00+05:30",
     displayTime: "10:51 AM",
+    displayTimeSi: "පෙ.ව. 10:51",
+    displayTimeTa: "காலை 10:51",
     displayDate: "April 14",
     displayDateSi: "අප්‍රේල් 14",
     displayDateTa: "ஏப்ரல் 14",
@@ -90,7 +98,7 @@ export const nakathTimes: NakathTime[] = [
     colour: "Red",
     colourSi: "රතු",
     colourTa: "சிவப்பு",
-    name: { en: "Lipa Ganima", si: "ලිප ගැනීම", ta: "அடுப்பு மூட்டல்" },
+    name: { en: "Cooking First Meal", si: "පළමු ආහාර වේල පිසීම", ta: "முதல் உணவு சமைத்தல்" },
     subtitle: {
       en: "Light the Hearth",
       si: "ලිප දල්වීම",
@@ -107,6 +115,8 @@ export const nakathTimes: NakathTime[] = [
     icon: "🍚",
     time: "2026-04-14T12:06:00+05:30",
     displayTime: "12:06 PM",
+    displayTimeSi: "දහවල් 12:06",
+    displayTimeTa: "மதியம் 12:06",
     displayDate: "April 14",
     displayDateSi: "අප්‍රේල් 14",
     displayDateTa: "ஏப்ரல் 14",
@@ -117,43 +127,16 @@ export const nakathTimes: NakathTime[] = [
     colour: "Red",
     colourSi: "රතු",
     colourTa: "சிவப்பு",
-    name: { en: "Kama Ganima", si: "කෑම ගැනීම", ta: "உண்ணல்" },
+    name: { en: "First Work/Meal", si: "පළමු රැකියාව/ආහාර වේල", ta: "முதல் வேலை/உணவு" },
     subtitle: {
-      en: "First Meal of New Year",
-      si: "නව වර්ෂයේ පළමු ආහාරය",
-      ta: "புத்தாண்டின் முதல் உணவு",
+      en: "First Meal, Work & Transactions",
+      si: "ආහාර ගැනීම හා ගනු දෙනු",
+      ta: "உண்ணல் & வர்த்தகம்",
     },
     desc: {
-      en: "Sit facing South wearing Red clothes and partake in the first meal — milk rice with jaggery, kokis, and aluwa sweets.",
-      si: "රතු ඇඳුම් ඇඳ දකුණු දෙසට හැරී ඉඳ කිරිබත්, කොකිස්, ආළුව සහ හකුරු සමඟ නව වර්ෂයේ පළමු ආහාරය ලබා ගන්න.",
-      ta: "சிவப்பு ஆடை அணிந்து தெற்கு நோக்கி அமர்ந்து, பால் சோறு, கொக்கிஸ், அலுவா மற்றும் வெல்லத்துடன் முதல் உணவை உண்ணுங்கள்.",
-    },
-  },
-  {
-    id: "work",
-    icon: "💼",
-    time: "2026-04-14T12:06:00+05:30",
-    displayTime: "12:06 PM",
-    displayDate: "April 14",
-    displayDateSi: "අප්‍රේල් 14",
-    displayDateTa: "ஏப்ரல் 14",
-    color: "#074C8C",
-    direction: "South",
-    directionSi: "දකුණ",
-    directionTa: "தெற்கு",
-    colour: "Red",
-    colourSi: "රතු",
-    colourTa: "சிவப்பு",
-    name: { en: "Ganu Denu", si: "ගනු දෙනු ආරම්භය", ta: "வியாபாரம் தொடக்கம்" },
-    subtitle: {
-      en: "First Transactions & Work",
-      si: "පළමු වැඩ ආරම්භය හා ගනු දෙනු",
-      ta: "முதல் வர்த்தகம்",
-    },
-    desc: {
-      en: "Begin first transactions and business activities facing South in Red. Exchange betel leaves and coins to invite prosperity throughout the year.",
-      si: "රතු ඇඳුම් ඇඳ දකුණු දෙසට හැරී ව්‍යාපාරික කටයුතු ආරම්භ කරන්න. සෞභාග්‍ය ලෙස බුලත් දල්ලක් සහ කාසි හුවමාරු කරගන්න.",
-      ta: "சிவப்பு ஆடை அணிந்து தெற்கு நோக்கி வியாபார நடவடிக்கைகளைத் தொடங்குங்கள். செழிப்பை அழைக்க வெற்றிலை மற்றும் நாணயங்கள் பரிமாறிக்கொள்ளுங்கள்.",
+      en: "Sit facing South wearing Red clothes for the first meal — milk rice with jaggery, kokis, and aluwa. Also commence first work and transactions, exchanging betel leaves and coins for prosperity.",
+      si: "රතු ඇඳුම් ඇඳ දකුණු දෙසට හැරී ඉඳ කිරිබත්, කොකිස්, ආළුව සහ හකුරු සමඟ නව වර්ෂයේ පළමු ආහාරය ලබා ගන්න. ව්‍යාපාරික කටයුතු ආරම්භ කර සෞභාග්‍ය ලෙස බුලත් දල්ලක් සහ කාසි හුවමාරු කරගන්න.",
+      ta: "சிவப்பு ஆடை அணிந்து தெற்கு நோக்கி அமர்ந்து முதல் உணவை உண்ணுங்கள். வியாபார நடவடிக்கைகளைத் தொடங்கி வெற்றிலை மற்றும் நாணயங்கள் பரிமாறிக்கொள்ளுங்கள்.",
     },
   },
   {
@@ -161,6 +144,8 @@ export const nakathTimes: NakathTime[] = [
     icon: "🌿",
     time: "2026-04-15T06:55:00+05:30",
     displayTime: "6:55 AM",
+    displayTimeSi: "පෙ.ව. 06:55",
+    displayTimeTa: "காலை 06:55",
     displayDate: "April 15",
     displayDateSi: "අප්‍රේල් 15",
     displayDateTa: "ஏப்ரல் 15",
@@ -171,7 +156,7 @@ export const nakathTimes: NakathTime[] = [
     colour: "Green",
     colourSi: "කොළ",
     colourTa: "பச்சை",
-    name: { en: "Hisa Thel Gema", si: "හිස තෙල් ගෑම", ta: "எண்ணெய் தேய்த்தல்" },
+    name: { en: "Oil Anointing", si: "තෙල් ආලේප කිරීම", ta: "எண்ணெய் ஆலேபனம்" },
     subtitle: {
       en: "Auspicious Oil Bath",
       si: "ශුභ හිස් තෙල් ගෑම",
@@ -188,6 +173,8 @@ export const nakathTimes: NakathTime[] = [
     icon: "🚶",
     time: "2026-04-20T06:27:00+05:30",
     displayTime: "6:27 AM",
+    displayTimeSi: "පෙ.ව. 06:27",
+    displayTimeTa: "காலை 06:27",
     displayDate: "April 20",
     displayDateSi: "අප්‍රේල් 20",
     displayDateTa: "ஏப்ரல் 20",
@@ -198,7 +185,7 @@ export const nakathTimes: NakathTime[] = [
     colour: "White",
     colourSi: "සුදු",
     colourTa: "வெள்ளை",
-    name: { en: "Setting Out for Work", si: "රැකිරක්ෂා සඳහා ගමන", ta: "வேலைக்காக புறப்படல்" },
+    name: { en: "Setting out for Work", si: "රැකියාවට යාම", ta: "வேலைக்காக புறப்படல்" },
     subtitle: {
       en: "First Journey & Livelihood",
       si: "පළමු ගමන හා රැකිරක්ෂාව",
