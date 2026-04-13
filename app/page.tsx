@@ -251,7 +251,8 @@ export default function Home() {
             {content.footer}
           </p>
           <p className="text-xs mt-4" style={{ color: "rgba(255,255,255,0.2)" }}>
-            © 2026 AvuruduNakath · Sri Lanka
+            © 2026 AvuruduNakath · Sri Lanka <br />
+            Design & Developed by plexCode
           </p>
         </footer>
       </div>
