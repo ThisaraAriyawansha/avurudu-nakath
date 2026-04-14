@@ -1,31 +1,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Lang, siteContent } from "@/lib/nakath";
+import { Lang, siteContent, nakathTimes, NakathTime } from "@/lib/nakath";
 
 interface TimeLeft {
   days: number;
   hours: number;
   minutes: number;
   seconds: number;
-  passed: boolean;
 }
 
-// Punya Kalaya — April 14, 2026 at 9:32 AM Asia/Colombo (UTC+05:30)
-const PUNYA_KALAYA = new Date("2026-04-14T09:32:00+05:30");
+function getNextNakath(): NakathTime | null {
+  const now = Date.now();
+  return nakathTimes.find(n => new Date(n.time).getTime() > now) ?? null;
+}
 
-function calcTimeLeft(): TimeLeft {
-  const diff = PUNYA_KALAYA.getTime() - Date.now();
-  if (diff <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0, passed: true };
-  }
+function calcTimeLeft(target: Date): TimeLeft {
+  const diff = Math.max(0, target.getTime() - Date.now());
   const totalSecs = Math.floor(diff / 1000);
   return {
     days: Math.floor(totalSecs / 86400),
     hours: Math.floor((totalSecs % 86400) / 3600),
     minutes: Math.floor((totalSecs % 3600) / 60),
     seconds: totalSecs % 60,
-    passed: false,
   };
 }
 
@@ -34,21 +31,35 @@ function pad(n: number) {
 }
 
 export default function Countdown({ lang }: { lang: Lang }) {
-  const [time, setTime] = useState<TimeLeft>(calcTimeLeft);
+  const [next, setNext] = useState<NakathTime | null>(getNextNakath);
+  const [time, setTime] = useState<TimeLeft>(() =>
+    next ? calcTimeLeft(new Date(next.time)) : { days: 0, hours: 0, minutes: 0, seconds: 0 }
+  );
   const content = siteContent[lang];
 
   useEffect(() => {
-    const id = setInterval(() => setTime(calcTimeLeft()), 1000);
+    const id = setInterval(() => {
+      const n = getNextNakath();
+      setNext(n);
+      if (n) setTime(calcTimeLeft(new Date(n.time)));
+    }, 1000);
     return () => clearInterval(id);
   }, []);
 
-  if (time.passed) {
+  if (!next) {
     return (
       <div className="text-center py-8 px-4">
         <p className="text-2xl font-display gold-text">{content.newYearPassed}</p>
       </div>
     );
   }
+
+  const label =
+    lang === "si"
+      ? `${next.name.si} දක්වා`
+      : lang === "ta"
+      ? `${next.name.ta} வரை`
+      : `Until ${next.name.en}`;
 
   const units = [
     { label: content.days, value: time.days },
@@ -61,7 +72,7 @@ export default function Countdown({ lang }: { lang: Lang }) {
     <div className="w-full">
       <p className="text-center text-sm font-medium tracking-widest uppercase mb-6"
         style={{ color: "rgba(255,216,120,0.6)" }}>
-        {content.countdownLabel}
+        {label}
       </p>
       <div className="grid grid-cols-4 gap-3 max-w-lg mx-auto">
         {units.map(({ label, value }) => (

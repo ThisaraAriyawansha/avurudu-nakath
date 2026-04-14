@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:lakpura.com)"
+      "WebFetch(domain:lakpura.com)",
+      "Bash(node_modules/.bin/next build:*)",
+      "Bash(npx next:*)",
+      "Bash(cmd /c \"cd /d \\\\\"d:\\\\Personal Project\\\\AvuruduNakath\\\\avurudu-nakath\\\\\" && npx next build 2>&1\")",
+      "Bash(powershell -Command \"cd 'D:\\\\Personal Project\\\\AvuruduNakath\\\\avurudu-nakath'; npx next build 2>&1 | Select-Object -First 40\")",
+      "Bash(powershell -Command \"cd 'D:\\\\Personal Project\\\\AvuruduNakath\\\\avurudu-nakath'; & 'C:\\\\Program Files\\\\nodejs\\\\npx.cmd' next build 2>&1 | Select-Object -First 50\")"
     ]
   }
 }
