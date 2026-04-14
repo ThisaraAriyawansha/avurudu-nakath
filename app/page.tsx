@@ -7,6 +7,7 @@ import NakathCard from "@/components/NakathCard";
 import OilLamp from "@/components/OilLamp";
 import LangSwitcher from "@/components/LangSwitcher";
 import FloatingPetals from "@/components/FloatingPetals";
+import LiveClock from "@/components/LiveClock";
 
 const Countdown = dynamic(() => import("@/components/Countdown"), { ssr: false });
 
@@ -36,7 +37,10 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <LangSwitcher current={lang} onChange={setLang} />
+            <div className="flex items-center gap-3">
+              <LiveClock />
+              <LangSwitcher current={lang} onChange={setLang} />
+            </div>
           </div>
 
           {/* Hero */}
