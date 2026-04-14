@@ -56,7 +56,7 @@ export default function Countdown({ lang }: { lang: Lang }) {
 
   const label =
     lang === "si"
-      ? `${next.name.si} දක්වා`
+      ? `${next.name.si} සඳහා`
       : lang === "ta"
       ? `${next.name.ta} வரை`
       : `Until ${next.name.en}`;
