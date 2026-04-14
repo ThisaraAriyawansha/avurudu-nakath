@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"app\\\\page.tsx -> @/components/Countdown\":{\"id\":\"app\\\\page.tsx -> @/components/Countdown\",\"files\":[\"static/chunks/_app-pages-browser_components_Countdown_tsx.js\"]}}"
