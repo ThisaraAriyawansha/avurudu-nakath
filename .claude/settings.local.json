@@ -6,7 +6,9 @@
       "Bash(npx next:*)",
       "Bash(cmd /c \"cd /d \\\\\"d:\\\\Personal Project\\\\AvuruduNakath\\\\avurudu-nakath\\\\\" && npx next build 2>&1\")",
       "Bash(powershell -Command \"cd 'D:\\\\Personal Project\\\\AvuruduNakath\\\\avurudu-nakath'; npx next build 2>&1 | Select-Object -First 40\")",
-      "Bash(powershell -Command \"cd 'D:\\\\Personal Project\\\\AvuruduNakath\\\\avurudu-nakath'; & 'C:\\\\Program Files\\\\nodejs\\\\npx.cmd' next build 2>&1 | Select-Object -First 50\")"
+      "Bash(powershell -Command \"cd 'D:\\\\Personal Project\\\\AvuruduNakath\\\\avurudu-nakath'; & 'C:\\\\Program Files\\\\nodejs\\\\npx.cmd' next build 2>&1 | Select-Object -First 50\")",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('public/logo.jpg'\\); print\\(img.size\\)\")",
+      "Bash(file \"public/logo.jpg\")"
     ]
   }
 }
