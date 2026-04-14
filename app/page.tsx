@@ -24,7 +24,8 @@ export default function Home() {
 
         {/* ── HEADER ── */}
         <header className="pt-4 sm:pt-8 pb-4 sm:pb-6">
-          <div className="flex items-center justify-between mb-4 sm:mb-8">
+          {/* Row 1: Logo + Lang switcher (+ clock inline on sm+) */}
+          <div className="flex items-center justify-between mb-2 sm:mb-8">
             {/* Logo / Site name */}
             <div className="flex items-center gap-3">
               <OilLamp size={36} />
@@ -38,9 +39,20 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <LiveClock />
+              {/* Clock inline only on sm+ screens */}
+              <div className="hidden sm:block">
+                <LiveClock />
+              </div>
               <LangSwitcher current={lang} onChange={setLang} />
             </div>
+          </div>
+
+          {/* Row 2: Clock centered — mobile only */}
+          <div
+            className="flex sm:hidden justify-center items-center mb-4 py-1.5 rounded-xl"
+            style={{ background: "rgba(255,170,0,0.06)", border: "1px solid rgba(255,170,0,0.12)" }}
+          >
+            <LiveClock />
           </div>
 
           {/* Hero */}

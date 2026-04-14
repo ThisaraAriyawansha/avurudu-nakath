@@ -35,8 +35,8 @@ export default function LiveClock() {
 
   return (
     <div
-      className="flex items-center gap-1 font-display"
-      style={{ color: "rgba(255,216,120,0.75)", fontSize: "0.85rem", letterSpacing: "0.05em" }}
+      className="flex items-center gap-1 font-display text-sm sm:text-base"
+      style={{ color: "rgba(255,216,120,0.75)", letterSpacing: "0.05em" }}
     >
       <span>{time.h}</span>
       <span style={{ color: "rgba(255,170,0,0.5)", animation: "subtlePulse 1s ease-in-out infinite" }}>:</span>
