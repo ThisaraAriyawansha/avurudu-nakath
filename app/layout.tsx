@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
+  : process.env.VERCEL_URL
+  ? new URL(`https://${process.env.VERCEL_URL}`)
+  : new URL("http://localhost:3000");
+
 export const metadata: Metadata = {
+  metadataBase: baseUrl,
   title: "AvuruduNakath — Sinhala & Tamil New Year 2026",
   description:
     "Auspicious Nakath times for Sinhala & Tamil New Year 2026. සිංහල හා දෙමළ අළුත් අවුරුදු නකත් වේලාවන්. சிங்கள மற்றும் தமிழ் புத்தாண்டு 2026.",
@@ -17,8 +24,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logo.jpg",
-        width: 1200,
-        height: 630,
+        width: 406,
+        height: 395,
         alt: "AvuruduNakath 2026",
       },
     ],
