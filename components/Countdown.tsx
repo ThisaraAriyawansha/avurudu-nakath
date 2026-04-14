@@ -38,25 +38,20 @@ export default function Countdown({ lang }: { lang: Lang }) {
   const content = siteContent[lang];
 
   useEffect(() => {
-    let intervalId: ReturnType<typeof setInterval>;
+    let timeoutId: ReturnType<typeof setTimeout>;
 
     function tick() {
       const n = getNextNakath();
       setNext(n);
       if (n) setTime(calcTimeLeft(new Date(n.time)));
+      // Re-sync every tick so drift never accumulates
+      timeoutId = setTimeout(tick, 1000 - (Date.now() % 1000));
     }
 
-    // Align first tick to the next exact second boundary on the wall clock
-    const msToNextSecond = 1000 - (Date.now() % 1000);
-    const timeoutId = setTimeout(() => {
-      tick();
-      intervalId = setInterval(tick, 1000);
-    }, msToNextSecond);
+    // First tick at next second boundary
+    timeoutId = setTimeout(tick, 1000 - (Date.now() % 1000));
 
-    return () => {
-      clearTimeout(timeoutId);
-      clearInterval(intervalId);
-    };
+    return () => clearTimeout(timeoutId);
   }, []);
 
   if (!next) {

@@ -15,20 +15,18 @@ export default function LiveClock() {
   const [time, setTime] = useState<{ h: string; m: string; s: string } | null>(null);
 
   useEffect(() => {
-    setTime(getTime());
+    let timeoutId: ReturnType<typeof setTimeout>;
 
-    // Sync to next second boundary
-    const msToNextSecond = 1000 - (Date.now() % 1000);
-    let intervalId: ReturnType<typeof setInterval>;
-    const timeoutId = setTimeout(() => {
+    function tick() {
       setTime(getTime());
-      intervalId = setInterval(() => setTime(getTime()), 1000);
-    }, msToNextSecond);
+      // Re-sync every tick so drift never accumulates
+      timeoutId = setTimeout(tick, 1000 - (Date.now() % 1000));
+    }
 
-    return () => {
-      clearTimeout(timeoutId);
-      clearInterval(intervalId);
-    };
+    // First tick at next second boundary
+    timeoutId = setTimeout(tick, 1000 - (Date.now() % 1000));
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   if (!time) return null;
