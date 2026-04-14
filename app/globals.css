@@ -129,6 +129,21 @@ body {
 ::-webkit-scrollbar-track { background: #0A0500; }
 ::-webkit-scrollbar-thumb { background: #C47800; border-radius: 3px; }
 
+/* Clock row: gold pill on mobile, invisible wrapper on desktop */
+.clock-row {
+  background: rgba(255, 170, 0, 0.06);
+  border: 1px solid rgba(255, 170, 0, 0.12);
+}
+@media (min-width: 640px) {
+  .clock-row {
+    background: transparent;
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 0;
+  }
+}
+
 /* Language button active */
 .lang-btn.active {
   background: rgba(255, 170, 0, 0.2);

@@ -24,10 +24,10 @@ export default function Home() {
 
         {/* ── HEADER ── */}
         <header className="pt-4 sm:pt-8 pb-4 sm:pb-6">
-          {/* Row 1: Logo + Lang switcher (+ clock inline on sm+) */}
-          <div className="flex items-center justify-between mb-2 sm:mb-8">
+          {/* Header: wraps on mobile so clock drops to row 2; single row on sm+ */}
+          <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-y-2 mb-4 sm:mb-8">
             {/* Logo / Site name */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-none">
               <OilLamp size={36} />
               <div>
                 <h1 className="font-display text-xl gold-text leading-none">
@@ -38,21 +38,17 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              {/* Clock inline only on sm+ screens */}
-              <div className="hidden sm:block">
-                <LiveClock />
-              </div>
+
+            {/* Lang switcher — stays top-right on both mobile and desktop */}
+            <div className="flex-none">
               <LangSwitcher current={lang} onChange={setLang} />
             </div>
-          </div>
 
-          {/* Row 2: Clock centered — mobile only */}
-          <div
-            className="flex sm:hidden justify-center items-center mb-4 py-1.5 rounded-xl"
-            style={{ background: "rgba(255,170,0,0.06)", border: "1px solid rgba(255,170,0,0.12)" }}
-          >
-            <LiveClock />
+            {/* Clock — order-last so it wraps to row 2 on mobile; sm:order-none puts it
+                between logo and lang-switcher on desktop */}
+            <div className="clock-row w-full sm:w-auto order-last sm:order-none flex justify-center sm:justify-end items-center py-1.5 rounded-xl">
+              <LiveClock />
+            </div>
           </div>
 
           {/* Hero */}

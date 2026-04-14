@@ -43,9 +43,11 @@ export default function Countdown({ lang }: { lang: Lang }) {
     function tick() {
       const n = getNextNakath();
       setNext(n);
-      if (n) setTime(calcTimeLeft(new Date(n.time)));
-      // Re-sync every tick so drift never accumulates
-      timeoutId = setTimeout(tick, 1000 - (Date.now() % 1000));
+      if (n) {
+        setTime(calcTimeLeft(new Date(n.time)));
+        // Only reschedule while there are still upcoming nakaths
+        timeoutId = setTimeout(tick, 1000 - (Date.now() % 1000));
+      }
     }
 
     // First tick at next second boundary

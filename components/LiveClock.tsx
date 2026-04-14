@@ -19,11 +19,11 @@ export default function LiveClock() {
 
     function tick() {
       setTime(getTime());
-      // Re-sync every tick so drift never accumulates
       timeoutId = setTimeout(tick, 1000 - (Date.now() % 1000));
     }
 
-    // First tick at next second boundary
+    // Show immediately, then sync to second boundary
+    setTime(getTime());
     timeoutId = setTimeout(tick, 1000 - (Date.now() % 1000));
 
     return () => clearTimeout(timeoutId);
